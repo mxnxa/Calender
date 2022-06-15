@@ -10,9 +10,10 @@ const HeaderBlock = styled.div`
   border-bottom: 2px solid #f0efef;
 
   p {
+    width: 210px;
+    text-align: center;
     font-size: 30px;
     font-weight: 700;
-    margin: 0 30px;
   }
 `;
 
@@ -27,14 +28,19 @@ const BtnBlock = styled.div`
   cursor: pointer;
 `;
 
-function CalendarHeader() {
+function CalendarHeader({ currentTargets, decreaseMonth, increaseMonth }) {
+  const { year, month } = currentTargets;
+
   return (
     <HeaderBlock>
-      <BtnBlock>
+      <BtnBlock onClick={decreaseMonth}>
         <FaAngleLeft />
       </BtnBlock>
-      <p>2022년 6월</p>
-      <BtnBlock>
+      {/* month는 0 부터 시작 => 원하는 월을 출력하려면 +1 */}
+      <p>
+        {year}년 {month + 1}월
+      </p>
+      <BtnBlock onClick={increaseMonth}>
         <FaAngleRight />
       </BtnBlock>
     </HeaderBlock>
