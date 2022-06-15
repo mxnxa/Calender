@@ -1,13 +1,39 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+@font-face {
+  font-family: "GowunDodum";
+  src: url(./font/GowunDodum-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Quicksand-Light";
+  src: url(./font/Quicksand-Light.ttf);
+}
+@font-face {
+  font-family: "Quicksand-Regular";
+  src: url(./font/Quicksand-Regular.ttf);
+}
+@font-face {
+  font-family: "Quicksand-Medium";
+  src: url(./font/Quicksand-Medium.ttf);
+}
+@font-face {
+  font-family: "Quicksand-SemiBold";
+  src: url(./font/Quicksand-SemiBold.ttf);
+}
+@font-face {
+  font-family: "Quicksand-Bold";
+  src: url(./font/Quicksand-Bold.ttf);
 }
