@@ -2,7 +2,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 
 const DateNum = styled.p`
-  font-family: "Quicksand-Regular";
+  font-family: "Quicksand-Medium";
   width: 25px;
   height: 25px;
   display: flex;
@@ -25,6 +25,7 @@ const DateBlock = styled.div`
   ${({ active }) =>
     active &&
     css`
+      border-radius: 5px;
       ${DateNum} {
         color: #fff;
         font-weight: 700;
@@ -33,18 +34,35 @@ const DateBlock = styled.div`
     `}
 `;
 
-function CalendarDay({ firstDate, isCurrentMonth, date, onClickDate }) {
+function CalendarDay({
+  renderDate,
+  renderYear,
+  renderMonth,
+  isCurrentMonth,
+  onClickDate,
+  selectedTargets,
+}) {
+  const isCurrent =
+    // selectedTargets : 선택(클릭)한 날짜
+    // curretnTargets : 현재 화면에 렌더링 되고 있는 날짜
+    selectedTargets.year === renderYear &&
+    selectedTargets.month === renderMonth;
+
   return (
     <DateBlock
       isCurrentMonth={isCurrentMonth}
-      active={firstDate === date && isCurrentMonth}
+      active={renderDate === selectedTargets.date && isCurrent}
       onClick={() => {
         // 이번 달이 아니면 이벤트 발생 x => onClickDate(date) 실행 x
         if (!isCurrentMonth) return;
-        onClickDate(firstDate);
+        onClickDate({
+          year: renderYear,
+          month: renderMonth,
+          date: renderDate,
+        });
       }}
     >
-      <DateNum>{firstDate}</DateNum>
+      <DateNum>{renderDate}</DateNum>
     </DateBlock>
   );
 }

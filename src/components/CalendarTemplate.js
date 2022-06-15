@@ -4,22 +4,47 @@ import CalendarBody from "./CalendarBody";
 import CalendarHeader from "./CalendarHeader";
 
 const Positioner = styled.div`
+  width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
   background-color: #ddeedd;
 `;
 
-const CalendarBlock = styled.div`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
+`;
+
+const CalendarBlock = styled.div`
   width: 600px;
   height: 500px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.3);
+`;
+
+const GoTodayBtn = styled.button`
+  /* width: 50px; */
+  padding: 3px;
+  /* border: none; */
+  /* border-radius: 5px; */
+  /* color: #fff; */
+  /* background: #9fa9a3; */
+  /* background: none; */
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.25s;
+
+  /* &:hover {
+    color: #e50914;
+    background-color: rgba(255, 255, 255, 0.8);
+  } */
 `;
 
 const today = new Date();
@@ -31,7 +56,7 @@ const initialDate = {
 
 function CalendarTemplate() {
   const [currentTargets, setCurrentTargets] = useState(initialDate);
-  const { year, month, date } = currentTargets;
+  const { year, month } = currentTargets;
 
   const [selectedTargets, setSelectedTargets] = useState(initialDate);
 
@@ -65,28 +90,32 @@ function CalendarTemplate() {
     }
   };
 
-  const onClickDate = (date) => {
-    setCurrentTargets({
-      ...currentTargets,
-      date,
-    });
+  const onClickDate = (targets) => setSelectedTargets(targets);
+
+  const renderSelectedDate = () => {
+    setCurrentTargets(initialDate);
+    setSelectedTargets(initialDate);
   };
 
   return (
     <Positioner>
-      <CalendarBlock>
-        <CalendarHeader
-          year={year}
-          month={month}
-          currentTargets={currentTargets}
-          decreaseMonth={decreaseMonth}
-          increaseMonth={increaseMonth}
-        />
-        <CalendarBody
-          currentTargets={currentTargets}
-          onClickDate={onClickDate}
-        />
-      </CalendarBlock>
+      <Container>
+        <CalendarBlock>
+          <CalendarHeader
+            currentTargets={currentTargets}
+            decreaseMonth={decreaseMonth}
+            increaseMonth={increaseMonth}
+            renderSelectedDate={renderSelectedDate}
+          />
+          <CalendarBody
+            currentTargets={currentTargets}
+            selectedTargets={selectedTargets}
+            onClickDate={onClickDate}
+            renderSelectedDate={renderSelectedDate}
+          />
+        </CalendarBlock>
+        <GoTodayBtn onClick={renderSelectedDate}>오늘</GoTodayBtn>
+      </Container>
     </Positioner>
   );
 }
