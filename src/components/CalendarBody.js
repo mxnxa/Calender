@@ -5,7 +5,7 @@ import CalendarDay from "./CalendarDay";
 const BodyBlock = styled.div`
   flex: 1;
   display: grid;
-  grid-template-rows: 40px repeat(5, 1fr);
+  grid-template-rows: 40px repeat(6, 1fr);
   grid-template-columns: repeat(7, 1fr);
   gap: 5px;
   padding: 0 10px;
@@ -57,7 +57,7 @@ function CalendarBody({ currentTargets, onClickDate, selectedTargets }) {
     let result = [];
 
     // 하루씩 더하면서 jsx 형태로 가공해서 배열에 저장
-    for (let i = 0; i < 35; i++) {
+    for (let i = 0; i < 42; i++) {
       result.push(
         <CalendarDay
           key={i}
