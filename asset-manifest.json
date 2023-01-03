@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/Calender/static/css/main.610604e8.css",
+    "main.js": "/Calender/static/js/main.56acaab6.js",
+    "static/js/787.5d0ef7a8.chunk.js": "/Calender/static/js/787.5d0ef7a8.chunk.js",
+    "static/media/GowunDodum-Regular.ttf": "/Calender/static/media/GowunDodum-Regular.39c9a39c246c3c54c53e.ttf",
+    "static/media/Quicksand-Regular.ttf": "/Calender/static/media/Quicksand-Regular.109d09e5f7c827d891ab.ttf",
+    "static/media/Quicksand-Medium.ttf": "/Calender/static/media/Quicksand-Medium.eb896a79553a58953cbf.ttf",
+    "static/media/Quicksand-SemiBold.ttf": "/Calender/static/media/Quicksand-SemiBold.f36a86e2ff447dc869f0.ttf",
+    "static/media/Quicksand-Light.ttf": "/Calender/static/media/Quicksand-Light.e715991b8e3173b8a2e5.ttf",
+    "static/media/Quicksand-Bold.ttf": "/Calender/static/media/Quicksand-Bold.4c3d23174e1f233b946d.ttf",
+    "index.html": "/Calender/index.html",
+    "main.610604e8.css.map": "/Calender/static/css/main.610604e8.css.map",
+    "main.56acaab6.js.map": "/Calender/static/js/main.56acaab6.js.map",
+    "787.5d0ef7a8.chunk.js.map": "/Calender/static/js/787.5d0ef7a8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.610604e8.css",
+    "static/js/main.56acaab6.js"
+  ]
+}
